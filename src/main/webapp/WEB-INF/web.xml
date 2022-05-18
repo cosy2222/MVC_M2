@@ -12,7 +12,7 @@
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
-    <welcome-file>lde.html</welcome-file>
+    <welcome-file>ksm.html</welcome-file>
   </welcome-file-list>
   
 <!-- 오라클 데이터 베이스 접속 정보 -->
@@ -54,16 +54,7 @@
   
 <!-- 서블릿 (servlet): *.java 파일을 html로 출력
 				     요즘은 서블릿은 controller를 뜻하기도 함 -->
-<!-- 서블릿(Controller) 매핑 설정 -->
-  <servlet>
-    <servlet-name>MVCBoardList</servlet-name>
-    <servlet-class>model2.mvcboard.ListController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>MVCBoardList</servlet-name>
-    <url-pattern>/list.do</url-pattern>
-  </servlet-mapping>
-  
+
 <!-- 서블릿(Controller) 매핑 설정 -->
   <servlet>
     <servlet-name>myController</servlet-name>
@@ -73,6 +64,33 @@
     <servlet-name>myController</servlet-name>
     <url-pattern>/mvc_test/my.do</url-pattern>
   </servlet-mapping>
+ 
+ 
+ 
+ <!-- MVCBoard 글목록 보기 Controller 매핑  --> 
+<!-- 서블릿(Controller) 매핑 설정 -->
+  <servlet>
+    <servlet-name>MVCBoardList</servlet-name>
+    <servlet-class>model2.mvcboard.ListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MVCBoardList</servlet-name>
+    <url-pattern>/mvcboard/list.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- 페이징 처리를 위한 설정 (변수값 할당) 출력레코드수 : 10개  , 페이지수 : 5 -->
+  <context-param>
+  	<param-name>POSTS_PER_PAGE</param-name>
+  	<param-value>10</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>PAGES_PER_BLOCK</param-name>
+  	<param-value>5</param-value>
+  </context-param>
+  
+  
 </web-app>
 
 
