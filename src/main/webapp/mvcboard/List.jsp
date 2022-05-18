@@ -52,7 +52,7 @@
 				</tr>	
 			</c:when>
 			<c:otherwise>  <!-- 게시물이 존재할떄 -->
-				<c:forEach items ="${boardLists }" var = "row" varstatus = "loop">
+				<c:forEach items ="${boardLists }" var = "row" varStatus = "loop">
 					<tr align = "center">
 						<td> <!-- 번호 -->
 							${map.totalCount - (((map.pageNum-1) * map.pageSize) + loop.index) }
@@ -76,7 +76,7 @@
 						
 						<td> <!-- 첨부파일 -->
 							<c:if test="${not empty row.ofile }">
-								<a href = "../mvcboard/download.do?ofile=${row.ofile }& sfile=${row.sfile} & idx = ${row.idx">[Down]</a>
+								<a href = "../mvcboard/download.do?ofile=${row.ofile }& sfile=${row.sfile} & idx = ${row.idx}">[Down]</a>
 							</c:if>
 						</td>
 						
