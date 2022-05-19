@@ -31,3 +31,30 @@ values ( seq_board_num.nextval , '강성민5' , '자료실 제목5' , '내용5' , '1234');
 select * from mvcboard;
 
 commit;
+
+
+-- DB에서 특정 레코드만 출력 할때 (검색 없이 출력) 
+SELECT * FROM (     
+SELECT Tb.*, ROWNUM rNum fROM (         
+SELECT * FROM mvcboard   ORDER BY idx DESC) Tb )  WHERE rNum BETWEEN 1 AND 4;
+
+-- 검색기능을 사용해서 출력 할떄 
+SELECT * FROM (     
+SELECT Tb.*, ROWNUM rNum fROM (         
+SELECT * FROM mvcboard where title like '%제목%'  ORDER BY idx DESC) Tb ) 
+WHERE rNum BETWEEN 1 AND 4;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
