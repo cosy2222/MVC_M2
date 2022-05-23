@@ -1,17 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>±âº» ÆäÀÌÁö </title>
+<meta charset="UTF-8">
+<title>ê¸°ë³¸ íŽ˜ì´ì§€ (Default)</title>
 </head>
 <body>
-	<h2>ÆÄÀÏ Ã·ºÎÇü °Ô½ÃÆÇ(MVC ¸ðµ¨·Î °³¹ß)</h2>
-	<a href = "../mvcboard/list.do">°Ô½ÃÆÇ ¸ñ·Ï ¹Ù·Î°¡±â</a>
-
-
-
+	<h2> íŒŒì¼ ì²¨ë¶€í˜• ê²Œì‹œíŒ (MVC ëª¨ë¸ë¡œ ê°œë°œ )</h2>
+	<a href = "../mvcboard/list.do"> ê²Œì‹œíŒ ëª©ë¡ ë°”ë¡œê°€ê¸° </a>
 
 </body>
 </html>

@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import jakarta.servlet.ServletContext;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import utils.BoardPage;   //페이징 처리하는 객체 
 
@@ -33,7 +33,7 @@ public class ListController extends HttpServlet {
             map.put("searchField", searchField);
             map.put("searchWord", searchWord);
         }
-        int totalCount = dao.selectCount(map);  // 게시물 개수
+        int totalCount = dao.selectCount(map);  // 게시물 개수 (게시물에서 start, end) 
 		
 	/* 페이징 처리 부분 start */
 		
@@ -60,8 +60,8 @@ public class ListController extends HttpServlet {
 		map.put("start", start); 
 		map.put("end", end);
 		
-		System.out.println(start);
-		System.out.println(end);
+		//System.out.println(start);
+		//System.out.println(end);
 		
 		
 		
@@ -74,17 +74,20 @@ public class ListController extends HttpServlet {
         dao.close(); // DB 연결 닫기
 	
 	//뷰페이지에 전달 할 매개변수들을 추가 
+        //utils.BoardPage : 패이징 처리하는 클래스, pagingStr 메소드 : static 메소드
     String pagingImg = BoardPage.pagingStr(totalCount, pageSize,
             blockPage, pageNum, "../mvcboard/list.do");  // 바로가기 영역 HTML 문자열
     
-    //view 페이지로 변수의 값을 전달 
+    //View페이지로 변수의 값을 전달 
+    
     map.put("pagingImg", pagingImg);
     map.put("totalCount", totalCount);
     map.put("pageSize", pageSize);
     map.put("pageNum", pageNum); 
 	
 	//뷰페이지로 데이터 전달, request 영역에 전달할 데이터를 저장후 List.jsp (뷰페이지) 로 포워드 
-    req.setAttribute("boardLists", boardLists);
+    
+    req.setAttribute("boardLists", boardLists);  //DataBase에서 Select한 결과값
     req.setAttribute("map", map);
     req.getRequestDispatcher("/mvcboard/List.jsp").forward(req, resp);
 	
