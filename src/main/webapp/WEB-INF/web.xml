@@ -16,6 +16,9 @@
     <welcome-file>pjw.html</welcome-file>
   </welcome-file-list>
   
+
+  
+  
   <!-- 오라클 데이타 베이스 접속 정보  -->
   <context-param>
   	<param-name>OracleDriver</param-name>
@@ -37,7 +40,7 @@
   	<param-value>1234</param-value>
   </context-param>
   
-  <!--  세션 유지 기간 설정 (20분동안 세션 유지  -->
+  <!--  세션 유지 기간 설정 (분) -->
   <session-config>
   	<session-timeout>20</session-timeout>
   </session-config>

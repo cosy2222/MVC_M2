@@ -17,6 +17,7 @@ public class DBConnPool {
 	public PreparedStatement psmt;
 	public ResultSet rs; 
 	
+	
 	//기본 생성자 
 	public DBConnPool() {
 		
