@@ -10,7 +10,7 @@
   String passwd  = request.getParameter("passwd");
 
   LogonDBBean manager = LogonDBBean.getInstance();
-  int check= manager.usercheck(id, passwd);//사용자인증처리 메소드
+  int check= manager.userCheck(id,passwd);//사용자인증처리 메소드
 
   if(check==1)//사용자인증에 성공시 세션속성을 설정
 	session.setAttribute("id",id);

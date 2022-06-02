@@ -10,7 +10,7 @@
 	
   LogonDBBean manager = LogonDBBean.getInstance();
   //회원탈퇴처리 메소드 수행 후 탈퇴 상황 값 반환
-  int check = manager.deleteMember(id, passwd);
+  int check = manager.deleteMember(id,passwd);
 	
   if(check == 1)//탈퇴성공시
 	 session.invalidate();//세션을 무효화

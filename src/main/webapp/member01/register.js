@@ -44,7 +44,7 @@ $(document).ready(function(){
 		      url:"registerPro.jsp",
 		      data:query,
 		      success:function(data){
-		    	  window.location.href("main.jsp");
+		    	  window.location.href = 'main.jsp';
 		 	  }
 		  });
 	   }
@@ -52,7 +52,7 @@ $(document).ready(function(){
 	
 	//[취소]버튼을 클릭하면 자동실행
 	$("#cancle").click(function(){
-		window.location.href("main.jsp");
+		window.location.href="main.jsp";
 	});
 
  });

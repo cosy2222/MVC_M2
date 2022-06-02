@@ -9,7 +9,7 @@
    String passwd = request.getParameter("passwd");
 
    LogonDBBean manager = LogonDBBean.getInstance();
-   int check = manager.usercheck(id, passwd);
+   int check = manager.userCheck(id, passwd);
    
    out.println(check);
 %>
